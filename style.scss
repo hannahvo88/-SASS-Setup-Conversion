@@ -1,0 +1,63 @@
+
+@import '_begin.scss';
+@import '_variables.scss';
+
+
+@mixin body-grid {
+    display: grid;
+    justify-items: center;
+    align-items: center;
+
+}
+
+@mixin animation(){
+    transition: box-shadow 1s ease-out;
+    box-shadow: 5px 5px 10px aqua;
+}
+
+body {
+    @include body-grid();
+    grid-template-columns: 20vw 60vw 20vw;
+    background-color: $background-color;
+    color: $text-color;
+    font-size: larger;
+    height: 130vh;
+}
+
+main {
+    width:100%;
+    margin-left: $margin;
+    margin-right: $margin;
+    
+    h1 {
+        border: 2px solid $border;
+        text-align: center;
+        margin-bottom: $margin;
+    
+    &:hover {
+        color: palevioletred;
+        background-color: $text-color;
+    }
+    }
+}
+
+div {
+    @include body-grid();
+    grid-template-rows: 1fr 1fr 1fr;
+    
+    p {
+    border: peachpuff 2px solid;
+    margin-bottom: $margin;
+    }
+    &:hover {
+    color: darkgreen;
+    }
+    
+    }
+
+
+
+.animation {
+    @include animation();
+
+}
